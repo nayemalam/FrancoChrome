@@ -15,7 +15,7 @@ def members():
  
 @app.route("/members/<string:name>/")
 def getMember(name):
-    return name</string:name>
+    return "Test"
  
 if __name__ == "__main__":
     app.run(debug=True)
