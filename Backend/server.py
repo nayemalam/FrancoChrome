@@ -30,6 +30,21 @@ def image():
 
     return response
 
+
+@app.route("/word/")
+def word():
+    date_arg = request.args.get('date')
+    if date_arg is None:
+        date_arg = date.today()
+    else:
+        date_arg = datetime.strptime(date_arg, "%m/%d/%Y")
+    
+    print(date_arg)
+
+    word = "Bonjour mon cheri"
+
+    return word
+
  
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=8080, threaded=True)
