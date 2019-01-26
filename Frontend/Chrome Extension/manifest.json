@@ -1,0 +1,14 @@
+{
+    "name": "ConUHacks2019",
+    "version": "1.0",
+    "description": "FR-EN Translation!",
+    "permissions": ["storage"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "manifest_version": 2,
+    "chrome_url_overrides":{
+      "newtab" : "popup.html"
+    }
+  }
