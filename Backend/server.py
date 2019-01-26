@@ -32,11 +32,11 @@ def image():
     img_path = "./images/quebec_small.jpg"
     img_desc = "This image depicts the majestic Quebec City skyline"
     
-    response = make_response(url_for(img_path))
+    response = make_response(url_for('static', filename=img_path))
 
-    response.headers["Description"] = img_desc
+    # response.headers["Description"] = img_desc
 
-    return response
+    return "/static/quebec_small.jpg"
 
 
 @app.route("/word/")
