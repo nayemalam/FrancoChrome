@@ -13,8 +13,20 @@
 
     /* BEGIN STYLES */
 
+    #bg {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+
+    }
+
     body {
-      background: url(http://7wallpapers.net/wp-content/uploads/3_Montreal.jpg);
+      /* background: url(http://7wallpapers.net/wp-content/uploads/3_Montreal.jpg); */
       background-size: cover;
       background-position: top;
       font-family: Lato;
@@ -130,27 +142,32 @@
   </head>
   <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="inner-container">
-        <div id="content">
-          <h2>Your Word of the Day</h2>
-          <h1>Frenchify</h1>
-          <hr>
+    <img src="http://7wallpapers.net/wp-content/uploads/3_Montreal.jpg" id="bg" alt="">
 
-          <div class="col-sm-3 pull-right">
-            <div class="btn btn-one">
-              <span>Next Word <i class="fas fa-caret-right" style="padding-left: 15px;"></i></span>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-container">
+          <div id="content">
+            <h2>Your Word of the Day</h2>
+            <h1>Frenchify</h1>
+            <hr>
+
+            <div class="col-sm-3 pull-right">
+              <div class="btn btn-one">
+                <span>Next Word <i class="fas fa-caret-right" style="padding-left: 15px;"></i></span>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
+
       </div>
 
     </div>
 
-  </div>
 
 
   <script src="background.js"></script>
