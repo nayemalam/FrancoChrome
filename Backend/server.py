@@ -49,9 +49,11 @@ def word():
     
     print(date_arg)
 
-    word = "Bonjour mon cheri"
+    response = make_response("Bonjour")
 
-    return word
+    response.headers["Translation"] = "Hello"
+
+    return response
 
  
 if __name__ == "__main__":
