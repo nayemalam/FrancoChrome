@@ -34,3 +34,6 @@ wordRequest.open("GET", "http://35.203.43.62:8080/word?date=" + today, false);
 wordRequest.send();
 var newWord = wordRequest.responseText;
 console.log(newWord);
+
+
+document.getELementById('bg').src=image;
