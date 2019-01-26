@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from flask import Flask, request, send_file, make_response
+from flask import Flask, request, url_for, send_file, make_response
 import io
 from flask_cors import CORS
 
@@ -9,6 +9,14 @@ CORS(app, resources={"/*": {"origins": "*"}})
 @app.route("/")
 def index():
     return "Index!"
+
+
+@app.route("/register/")
+def register():
+    res = make_response()
+    res.set_cookie("name", value="I am cookie")
+    
+    return res
 
 
 @app.route("/image/")
@@ -24,7 +32,7 @@ def image():
     img_path = "./images/quebec_small.jpg"
     img_desc = "This image depicts the majestic Quebec City skyline"
     
-    response = make_response(send_file(img_path, mimetype="image/jpg"))
+    response = make_response(url_for(img_path))
 
     response.headers["Description"] = img_desc
 
