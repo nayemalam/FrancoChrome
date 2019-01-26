@@ -13,16 +13,26 @@
 
     /* BEGIN STYLES */
 
-    #bg {
+    img#bg {
+  /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
 
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
     position: fixed;
     top: 0;
     left: 0;
+    }
 
-    /* Preserve aspet ratio */
-    min-width: 100%;
-    min-height: 100%;
-
+    @media screen and (max-width: 1024px) { /* Specific to this particular image */
+        img#bg {
+          left: 50%;
+          margin-left: -512px;   /* 50% */
+        }
     }
 
     body {
@@ -123,8 +133,18 @@
     	transform: scale(0.1, 1);
     }
 
+    /*
+    ========================
+      END OF BUTTON STYLE
+    ========================
+    */
+
+
+    div.outer-container {
+      background: red !important;
+    }
+
     .container {
-      background: red;
       padding-bottom: 5%;
       margin-top: 5%;
       max-width: 40%;
@@ -144,28 +164,31 @@
 
     <img src="http://7wallpapers.net/wp-content/uploads/3_Montreal.jpg" id="bg" alt="">
 
+    <div class= "outer-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="content">
+
+              <h2>Your Word of the Day</h2>
+              <h1 id="word">Frenchify</h1>
+              <h3 id="meaning">Meaning</h3>
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="inner-container">
-          <div id="content">
-            <h2>Your Word of the Day</h2>
-            <h1>Frenchify</h1>
-            <hr>
+              <hr>
 
-            <div class="col-sm-3 pull-right">
-              <div class="btn btn-one">
-                <span>Next Word <i class="fas fa-caret-right" style="padding-left: 15px;"></i></span>
+              <div class="col-sm-3 pull-right">
+                <div class="btn btn-one">
+                  <span>Next Word <i class="fas fa-caret-right" style="padding-left: 15px;"></i></span>
+                </div>
               </div>
+
             </div>
 
           </div>
+
         </div>
-
       </div>
-
     </div>
 
 

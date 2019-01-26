@@ -35,5 +35,4 @@ wordRequest.send();
 var newWord = wordRequest.responseText;
 console.log(newWord);
 
-
-document.getELementById('bg').src=image;
+console.log("hello");
