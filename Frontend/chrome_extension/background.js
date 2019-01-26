@@ -4,18 +4,39 @@
 
 'use strict';
 
-chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({color: '#3aa757'}, function() {
-    console.log("The color is green.");
-  });
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-      chrome.declarativeContent.onPageChanged.addRules([{
-        conditions: [new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: {hostEquals: 'developer.chrome.com'},
-        })
-        ],
-            actions: [new chrome.declarativeContent.ShowPageAction()]
-      }]);
-    });
-  });
-});
+
+console.log("hello ali bsdfj");
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+  dd = '0' + dd;
+}
+
+if (mm < 10) {
+  mm = '0' + mm;
+}
+
+today = mm + '/' + dd + '/' + yyyy;
+
+console.log("Date:" + today);
+
+
+var imageRequest = new XMLHttpRequest();
+debugger;
+imageRequest.open("GET", "http://35.203.43.62:8080/image?date="+ today, false);
+imageRequest.send();
+document.getElementById('bg').src = "http://35.203.43.62:8080" + imageRequest.responseText;
+document.getElementById('photo_desc').innerHTML = imageRequest.getResponseHeader("Description");
+console.log(imageDescription);
+
+var wordRequest = new XMLHttpRequest();
+wordRequest.open("GET", "http://35.203.43.62:8080/word?date=" + today, true);
+wordRequest.send();
+document.getElementById('word').innerHTML  = wordRequest.responseText;
+document.getElementById('translation').innerHTML = wordRequest.getResponseHeader("Translation");
+//var newWord = wordRequest.responseText;
+console.log(newWord);
