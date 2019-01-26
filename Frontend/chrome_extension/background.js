@@ -1,3 +1,7 @@
+// Copyright 2018 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 'use strict';
 
 
@@ -20,19 +24,19 @@ today = mm + '/' + dd + '/' + yyyy;
 
 console.log("Date:" + today);
 
+
 var imageRequest = new XMLHttpRequest();
 debugger;
 imageRequest.open("GET", "http://35.203.43.62:8080/image?date="+ today, false);
 imageRequest.send();
-var image = imageRequest.response;
-var imageDescription = imageRequest.responseText;
-console.log("Image Description" + imageDescription);
-// var response = alert("hello");
+document.getElementById('bg').src = "http://35.203.43.62:8080" + imageRequest.responseText;
+document.getElementById('photo_desc').innerHTML = imageRequest.getResponseHeader("Description");
+console.log(imageDescription);
 
 var wordRequest = new XMLHttpRequest();
-wordRequest.open("GET", "http://35.203.43.62:8080/word?date=" + today, false);
+wordRequest.open("GET", "http://35.203.43.62:8080/word?date=" + today, true);
 wordRequest.send();
-var newWord = wordRequest.responseText;
+document.getElementById('word').innerHTML  = wordRequest.responseText;
+document.getElementById('translation').innerHTML = wordRequest.getResponseHeader("Translation");
+//var newWord = wordRequest.responseText;
 console.log(newWord);
-
-console.log("hello");
