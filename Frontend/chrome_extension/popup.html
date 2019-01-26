@@ -7,6 +7,7 @@
     <!-- Latest compiled and minified CSS BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 
     <style>
@@ -42,7 +43,7 @@
       font-family: Lato;
       }
 
-    h1, h3, h2 {
+    h1, h2, h3, h4, p {
       color: white;
     }
 
@@ -68,7 +69,7 @@
     #content {
       text-align: center;
       padding-top: 15%;
-      
+
     }
 
     /*
@@ -81,7 +82,7 @@
     	line-height: 35px;
     	height: 50px;
     	text-align: center;
-    	width: 150px;
+    	width: 50px;
     	cursor: pointer;
     }
 
@@ -89,6 +90,10 @@
     	color: #FFF;
     	transition: all 0.3s;
     	position: relative;
+      margin-left: 40px;
+    }
+    button {
+      border-radius: 50px;
     }
     .btn-one span {
     	transition: all 0.3s;
@@ -145,11 +150,20 @@
 
     .container {
       padding-bottom: 5%;
-      border-radius: 50px;
-      margin-top: 5%;
+      margin-top: 10%;
       max-width: 40%;
+
+
+    }
+
+    .inner {
       background: rgba(0,0,0, 0.4);
       position: relative;
+      border-radius: 15px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 15px;
+
 
     }
 
@@ -157,6 +171,14 @@
       margin-top: 30px;
     }
 
+
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h1#word {
+      font-size: 80px;
+    }
 
     /* END OF STYLES */
 
@@ -172,28 +194,30 @@
     <img src="http://35.203.43.62:8080/static/quebec_small.jpg" id="bg" alt="">
 
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="content">
+      <div class="inner">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="content">
 
 
+                <h1 id="word">Frenchify</h1>
 
-              <h1 id="word">Frenchify</h1>
+                <hr>
 
-              <hr>
+                <h4 id="meaning">Meaning</h3>
 
-              <h3 id="meaning">Meaning</h3>
-
-              <div class="col-sm-3 pull-right">
-                <div class="btn btn-one">
-                  <span>Next Word <i class="fas fa-caret-right" style="padding-left: 15px;"></i></span>
+                <div class="col-sm-3 pull-right">
+                  <div class="btn btn-one">
+                    <span><i class="fas fa-caret-right" style="font-size: 40px;"></i></span>
+                  </div>
                 </div>
-              </div>
+            </div>
+
+
           </div>
 
-
         </div>
-
       </div>
     </div>
 
