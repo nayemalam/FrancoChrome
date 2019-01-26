@@ -38,7 +38,7 @@ def image():
     
     response = make_response(url_for('static', filename=img_path))
 
-    response.headers["img_escription"] = img_desc
+    response.headers["img_description"] = img_desc
     response.headers["word"] = "Bonjour"
     response.headers["translation"] = "Hello"
 
