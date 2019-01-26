@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, make_response
 import io
 from flask_cors import CORS
 
@@ -20,8 +20,15 @@ def image():
         date_arg = datetime.strptime(date_arg, "%m/%d/%Y")
     
     print(date_arg)
+
+    img_path = "./images/quebec_small.jpg"
+    img_desc = "This image depicts the majestic Quebec City skyline"
     
-    return send_file("./images/quebec_small.jpg", mimetype="image/jpg")
+    response = make_response(send_file(img_path, mimetype="image/jpg"))
+
+    response.headers["Description"] = img_desc
+
+    return response
 
  
 if __name__ == "__main__":
