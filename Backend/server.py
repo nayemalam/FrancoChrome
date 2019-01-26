@@ -2,9 +2,13 @@ from datetime import date, datetime
 from flask import Flask, request, url_for, send_file, make_response
 import io
 from flask_cors import CORS
+from database import create_connection, create_table
 
 app = Flask(__name__)
 CORS(app, resources={"/*": {"origins": "*"}})
+
+
+
  
 @app.route("/")
 def index():
@@ -35,6 +39,8 @@ def image():
     response = make_response(url_for('static', filename=img_path))
 
     response.headers["Description"] = img_desc
+    response.headers["Word"] = "Bonjour"
+    response.headers["Translation"] = "Hello"
 
     return response
 
