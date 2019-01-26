@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-    <link rel="shortcut icon" href="../assets/OldPort.jpg">
 
     <style>
+
+    /* BEGIN STYLES */
 
     body {
       background: url(http://7wallpapers.net/wp-content/uploads/3_Montreal.jpg);
@@ -47,37 +48,78 @@
       padding-top: 15%;
     }
 
-    /* fancy Button */
-    .fancy-button {
-    	display: inline-block;
-    	margin: 20px;
-    	font-family: 'Heebo', Helvetica, Arial, sans-serif;
-    	font-weight: 500;
-    	font-size: 16px;
-    	letter-spacing: 0.07em;
-    	text-transform: uppercase;
-    	line-height: 24px;
-    	color: #ffffff;
+    /*
+    ========================
+          BUTTON STYLE
+    ========================
+    */
+
+    .btn {
+    	line-height: 35px;
+    	height: 50px;
+    	text-align: center;
+    	width: 150px;
+    	cursor: pointer;
+    }
+
+    .btn-one {
+    	color: #FFF;
+    	transition: all 0.3s;
     	position: relative;
+    }
+    .btn-one span {
+    	transition: all 0.3s;
+    }
+    .btn-one::before {
+    	content: '';
+    	position: absolute;
+    	bottom: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	z-index: 1;
+    	opacity: 0;
+    	transition: all 0.3s;
+    	border-top-width: 1px;
+    	border-bottom-width: 1px;
+    	border-top-style: solid;
+    	border-bottom-style: solid;
+    	border-top-color: rgba(255,255,255,0.5);
+    	border-bottom-color: rgba(255,255,255,0.5);
+    	transform: scale(0.1, 1);
+    }
+    .btn-one:hover span {
+    	letter-spacing: 2px;
+    }
+    .btn-one:hover::before {
+    	opacity: 1;
+    	transform: scale(1, 1);
+    }
+    .btn-one::after {
+    	content: '';
+    	position: absolute;
+    	bottom: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	z-index: 1;
+    	transition: all 0.3s;
+    	background-color: rgba(255,255,255,0.1);
+    }
+    .btn-one:hover::after {
+    	opacity: 0;
+    	transform: scale(0.1, 1);
+    }
 
-      &.bg-gradient1 {
-        text-shadow: 0px 0px 1px #BF4C28;
-      }
+    .container {
+      background: red;
+      padding-bottom: 5%;
+      margin-top: 5%;
+      max-width: 40%;
 
-      &:before {
-  		content: '';
-  		display: inline-block;
-  		height: 40px;
-  		position: absolute;
-  		bottom: -1px;
-  		left: 10px;
-  		right: 10px;
-  		z-index: -1;
-  		border-radius: 2em;
-  		filter: blur(14px) brightness(0.9);
-  		transform-style: preserve-3d;
-  		transition: all 0.3s ease-out;
-	}
+    }
+
+    /* END OF STYLES */
 
 
 
@@ -91,12 +133,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
+        <div class="inner-container">
         <div id="content">
           <h2>Your Word of the Day</h2>
           <h1>Frenchify</h1>
           <hr>
-          <button>Next Word<i class="fas fa-caret-right" style="padding-left: 15px;"></i></button>
-          <a href="#" class="fancy-button bg-gradient1"><span>Tickets<i class="fas fa-caret-right"></i></span></a>
+
+          <div class="col-sm-3 pull-right">
+            <div class="btn btn-one">
+              <span>Next Word <i class="fas fa-caret-right" style="padding-left: 15px;"></i></span>
+            </div>
+          </div>
+
         </div>
       </div>
 
