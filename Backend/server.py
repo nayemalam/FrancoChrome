@@ -29,14 +29,14 @@ def image():
     
     print(date_arg)
 
-    img_path = "./images/quebec_small.jpg"
+    img_path = "./quebec_small.jpg"
     img_desc = "This image depicts the majestic Quebec City skyline"
     
     response = make_response(url_for('static', filename=img_path))
 
-    # response.headers["Description"] = img_desc
+    response.headers["Description"] = img_desc
 
-    return "/static/quebec_small.jpg"
+    return response
 
 
 @app.route("/word/")
