@@ -7,7 +7,7 @@ import json
 from database import create_connection, create_table
 
 app = Flask(__name__)
-CORS(app, resources={"/*": {"origins": "*"}}, origins='*', supports_credentials=True)
+CORS(app, resources={"/*": {"origins": "*"}}, expose_headers='*', origins='*', supports_credentials=True)
 
 users = dict()
 images = dict()
