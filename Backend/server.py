@@ -28,20 +28,25 @@ def image():
     
     prev_words.append(word)
 
-    # if len(prev_words) % 10 == 0:
-    #     images[uuid_val] = get_image()
-
+    if len(prev_words) % 10 == 0:
+        prev_img = images[uuid_val]
+        img = get_image()
+        while prev_img != img:
+            img = get_image()
+        images[uuid_val] = img
     users[uuid_val] = prev_words
     
     to_speech(word=word, save_to="static/audio/", filename=word)
 
-    img_path = "./quebec_small.jpg"
+    img_path = "static/images/" + users[uuid_val]
     audio_path = "./audio/" + word + ".mp3"
     img_desc = "This image depicts the majestic Quebec \
                 City skyline this is a long version of a \
                 description hopefully this works"
     
-    response = make_response(url_for('static', filename=img_path))
+
+    
+    response = make_response(url_for('', filename=img_path))
 
     response.headers["img_description"] = img_desc
     response.headers["word"] = word
