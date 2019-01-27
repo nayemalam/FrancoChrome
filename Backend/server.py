@@ -34,6 +34,7 @@ def image():
     print(date_arg)
 
     img_path = "./quebec_small.jpg"
+    audio_path = "./output.mp3"
     img_desc = "This image depicts the majestic Quebec City skyline"
     
     response = make_response(url_for('static', filename=img_path))
@@ -41,6 +42,7 @@ def image():
     response.headers["img_description"] = img_desc
     response.headers["word"] = "Bonjour"
     response.headers["translation"] = "Hello"
+    response.headers["audio_file"] = url_for('static', filename=audio_path)
 
     return response
 
