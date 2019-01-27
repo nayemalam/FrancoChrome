@@ -36,7 +36,7 @@ def image():
 
     users[uuid_val] = prev_words
     
-    to_speech(word=word, save_to="./static/audio/", filename=word)
+    to_speech(word=word, save_to="static/audio/", filename=word)
 
     img_path = "./quebec_small.jpg"
     audio_path = "./static/audio/" + word + ".mp3"
