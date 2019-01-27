@@ -33,6 +33,6 @@ function getAllElements(date){
 }
 
 function playAudio(audioFile) {
-  document.getElementById('audio').src = audioFile;
-  document.getElementById('audio').play();
+  document.getElementById('audio-part').src = audioFile;
+  document.getElementById('audio-part').play();
 }
