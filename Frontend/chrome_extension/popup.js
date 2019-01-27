@@ -79,5 +79,3 @@ function clock() {
   document.getElementById('currTime').innerHTML = hour+':'+min + mid ;
   setTimeout(clock, 1000);
 }
-
-    // most recent

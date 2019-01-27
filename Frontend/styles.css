@@ -33,7 +33,8 @@ p.title {
 
  .description {
    text-align: center;
-   background: rgba(0,0,0,0.3);
+   background: rgba(1,1,1,1);
    padding: 20px;
    margin-bottom: 40px;
+   border-radius: 15px;
  }

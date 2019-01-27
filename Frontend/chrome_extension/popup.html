@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Frenchify</title>
+    <title>FrancoChrome</title>
     <!-- Latest compiled and minified CSS BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -160,6 +160,7 @@
       padding-right: 20px;
       padding-left: 20px;
       padding-bottom: 15px;
+      margin-bottom: -3em;
 
     }
     .inner-desc {
@@ -167,6 +168,7 @@
       position: relative;
       border-radius: 50px;
       padding: 10px 20px 10px 20px;
+
     }
 
     #photo_desc {
@@ -193,8 +195,42 @@
       border: none;
     }
 
-    .col-md-11{
+    /* .col-md-11{
       margin-top: 60px;
+    } */
+
+    .col-md-11 {
+      margin-top: 60px;
+    }
+
+    li {
+      padding-right: 30px;
+    }
+
+    .button1{
+       display:inline-block;
+       padding:0.35em 1.2em;
+       border:0.1em solid #FFFFFF;
+       margin:0 0.3em 0.3em 0;
+       border-radius:0.12em;
+       box-sizing: border-box;
+       text-decoration:none;
+       font-family:'Roboto',sans-serif;
+       font-weight:300;
+       color:#FFFFFF;
+       text-align:center;
+       transition: all 0.2s;
+      }
+    .button1:hover{
+       color:#000000;
+       background-color:#FFFFFF;
+      }
+
+    @media all and (max-width:30em){
+     .button1{
+      display:block;
+      margin:0.4em auto;
+     }
     }
 
     /* END OF STYLES */
@@ -210,7 +246,33 @@
 
     <img src="http://35.203.8.27:8080/static/quebec_small.jpg" id="bg" alt="">
 
+    <div class="col-md-4">
+      <div id="weather" style="color: white; font-size: 40px; padding-top: 20px;"></div>
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <p class="" id="" style="color: white; padding-top: 10px;">
+
+      <ul class="nav navbar-nav pull-right">
+        <li></li>
+        <li style="font-size: 30px;"><a href="https://github.com/alishobeiri/ConUHacks" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="../info.html" class="button1" style="padding-top: 20px; target="_blank"">Resources</a></li>
+      </ul>
+
+
+
+
+
+
+      </p>
+
+    </div>
+
+    <br>
+
     <div class="container">
+
       <div class="inner">
 
         <div class="row">
@@ -249,9 +311,9 @@
     </div>
 
     <div class="col-md-11">
-      <h3 id="weather"></h3>
+      <!-- <h3 id="weather"></h3> -->
       <p class="pull-right inner-desc" id="photo_desc" style="color: white;">Description of City</p>
-      <div id="currTime" style="color: white; font-size: 80px; padding-left: 25px;"></div>
+      <div id="currTime" style="color: white; font-size: 80px; padding-left: 25px;">HH:MM</div>
     </div>
 
 
