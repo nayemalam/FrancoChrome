@@ -55,6 +55,10 @@ def image():
     response.headers["audio_file"] = url_for('static', filename=audio_path)
     response.set_cookie("uuid", value=uuid_val)
 
+    origin = request.headers['Origin']
+    # if origin in ALLOWED:
+    response.headers['Access-Control-Allow-Origin'] = origin
+
     return response
 
 
