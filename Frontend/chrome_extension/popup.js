@@ -54,14 +54,10 @@ function playAudio() {
   (sound).play();
 }
 
-// ADD CURRENT time
-// var display=setInterval(function(){Time()},0);
-// var date=new Date();
-// var time=date.toLocaleTimeString();
-// document.getElementById("time").innerHTML=time;
-
 function getNextWord(){
   debugger;
   // currDate = currDate.setDate(currDate.getDate()+1);
   //  getAllElements(currDate);
 }
+
+// ADD CURRENT TIME
