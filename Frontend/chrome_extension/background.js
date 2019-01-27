@@ -29,7 +29,9 @@ function getAllElements(date){
   document.getElementById('word').innerHTML  = objectRequest.getResponseHeader("word");
   document.getElementById('meaning').innerHTML = objectRequest.getResponseHeader("translation");
   var audioFile = "http://35.203.43.62:8080" + objectRequest.getResponseHeader("audio_file");
-  playAudio(audioFile);
+  // playAudio(audioFile);
+  // $( "#sound" ).click(playAudio(audioFile););
+
 }
 
 
