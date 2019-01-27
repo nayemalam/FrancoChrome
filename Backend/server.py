@@ -58,7 +58,7 @@ def image():
     response.headers["word"] = word
     response.headers["translation"] = translation(word)["translatedText"]
     response.headers["audio_file"] = url_for('static', filename=audio_path)
-    response.set_cookie("uuid", value=uuid_val)
+    # response.set_cookie("uuid", value=uuid_val)
 
     return response
 
