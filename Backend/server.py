@@ -1,8 +1,9 @@
 from datetime import date, datetime
-from flask import Flask, request, url_for, send_file, make_response
+from flask import Flask, jsonify, Request, request, url_for, send_file, make_response
 from utils import get_word, get_image, translation, to_speech
 import uuid
 from flask_cors import CORS
+import json
 from database import create_connection, create_table
 
 app = Flask(__name__)
@@ -39,20 +40,26 @@ def image():
     
     to_speech(word=word, save_to="static/audio/", filename=word)
 
+    response_dict = dict()
+
     img_path = "images/" + images[uuid_val]
     audio_path = "./audio/" + word + ".mp3"
     img_desc = "This image depicts the majestic Quebec \
                 City skyline this is a long version of a \
                 description hopefully this works"
     
-
+    img_path = url_for('static', filename=img_path)
+    audio_path = url_for('static', filename=audio_path)
+    translation_val = translation(word)["translatedText"]
     
-    response = make_response(url_for('static', filename=img_path))
 
-    # response.headers["img_description"] = img_desc
-    # response.headers["word"] = word
-    # response.headers["translation"] = translation(word)["translatedText"]
-    # response.headers["audio_file"] = url_for('static', filename=audio_path)
+    response_dict["img_description"] = img_desc
+    response_dict["word"] = word
+    response_dict["translation"] = translation_val
+    response_dict["audio_file"] = audio_path
+
+    r = json.dumps(response_dict)
+    response = make_response(r)
     response.set_cookie("uuid", value=uuid_val)
 
     return response
