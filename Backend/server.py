@@ -6,57 +6,50 @@ from flask_cors import CORS
 from database import create_connection, create_table
 
 app = Flask(__name__)
-CORS(app, resources={"/*": {"origins": "*"}})
+CORS(app, resources={"/*": {"origins": "*"}}, expose_headers='*')
 
-conn = create_connection("./database/database.db")
-
- 
-@app.route("/")
-def index():
-    return "Index!"
-
-
-@app.route("/register/")
-def register():
-    uuid = request.cookies.get("uuid")
-    if uuid is None:
-        res = make_response()
-        uuid_val = uuid.uuid4()
-        res.set_cookie("uuid", value=uuid_val)
-    
-    val = conn.execute('''
-        SELECT * FROM users;
-    ''')
-
-    print(val)
-
-    return res
+users = dict()
+images = dict()
 
 
 @app.route("/image/")
-def image():
-    date_arg = request.args.get('date')
-    if date_arg is None:
-        date_arg = date.today()
-    else:
-        date_arg = datetime.strptime(date_arg, "%m/%d/%Y")
+def image():    
+    uuid_val = request.cookies.get("uuid")
+    if uuid_val is None:
+        uuid_val = str(uuid.uuid4())
+        uuid_val = uuid_val.replace("-", "")
+    print("uuid_val: ", uuid_val)
+    prev_words = users.get(uuid_val, [])
     
-    print(date_arg)
+    word = get_word()[0]
 
+    while word in prev_words:
+        word = get_word()[0]
     
-    cookie_data = request.cookies.get("uuid")
-    print("Cookie_data: ", cookie_data)
+    print(word)
+
+    prev_words.append(word)
+
+    if len(prev_words) % 10 == 0:
+        images[uuid_val] = get_image()
+
+    users[uuid_val] = prev_words
+    
+    to_speech(word=word, save_to="static/audio/", filename=word)
 
     img_path = "./quebec_small.jpg"
-    audio_path = "./output.mp3"
-    img_desc = "This image depicts the majestic Quebec City skyline"
+    audio_path = "./audio/" + word + ".mp3"
+    img_desc = "This image depicts the majestic Quebec \
+                City skyline this is a long version of a \
+                description hopefully this works"
     
     response = make_response(url_for('static', filename=img_path))
 
     response.headers["img_description"] = img_desc
-    response.headers["word"] = "Bonjour"
-    response.headers["translation"] = "Hello"
+    response.headers["word"] = word
+    response.headers["translation"] = translation(word)["translatedText"]
     response.headers["audio_file"] = url_for('static', filename=audio_path)
+    response.set_cookie("uuid", value=uuid_val)
 
     return response
 
@@ -79,8 +72,4 @@ def word():
 
  
 if __name__ == "__main__":
-    word = get_word()[0]
-    print(word)
-    print(translation(word))
-    print(to_speech(word=word))
     app.run(debug=True, host='0.0.0.0', port=8080, threaded=True)
