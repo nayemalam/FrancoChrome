@@ -1,0 +1,39 @@
+img.criteria {
+  width: 30%;
+  float: left;
+  margin: 1.66%;
+}
+
+img.criteria:hover {
+  opacity: 0.5;
+}
+
+p.title {
+  font-family: Raleway;
+  margin-left: 1.66%;
+  font-size: 23px;
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 40%;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 20px;
+  padding-top: 25px;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .plot {
+   width: 50%;
+   padding-bottom: 50px;
+ }
+
+ .description {
+   text-align: center;
+   background: rgba(0,0,0,0.3);
+   padding: 20px;
+   margin-bottom: 40px;
+ }
