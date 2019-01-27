@@ -50,6 +50,8 @@ def image():
     audio_path = "./audio/" + word + ".mp3"
     img_desc = img_list[1]
     
+    print("Description: ", img_list[1])
+
     response = make_response(url_for('static', filename=img_path))
 
     response.headers["img_description"] = img_desc
