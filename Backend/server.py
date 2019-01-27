@@ -38,7 +38,7 @@ def image():
     
     to_speech(word=word, save_to="static/audio/", filename=word)
 
-    img_path = "static/images/" + users[uuid_val]
+    img_path = "static/images/" + images[uuid_val]
     audio_path = "./audio/" + word + ".mp3"
     img_desc = "This image depicts the majestic Quebec \
                 City skyline this is a long version of a \
