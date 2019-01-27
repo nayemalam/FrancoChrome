@@ -2,12 +2,12 @@
 
 var currDate = (getAllDate());
 
-
+/*
 var cookieRequest = new XMLHttpRequest();
 cookieRequest.open("GET", "http://35.203.43.62:8080/register", false);
 cookieRequest.withCredentials = true;
 cookieRequest.send(null);
-
+*/
 
 getAllElements(currDate);
 
@@ -56,8 +56,7 @@ function playAudio() {
 
 function getNextWord(){
   debugger;
-  // currDate = currDate.setDate(currDate.getDate()+1);
-  //  getAllElements(currDate);
+  getAllElements(currDate);
 }
 
 // ADD CURRENT TIME
