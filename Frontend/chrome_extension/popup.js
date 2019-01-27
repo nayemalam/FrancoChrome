@@ -51,3 +51,7 @@ function playAudio() {
 }
 
 // ADD CURRENT time
+var display=setInterval(function(){Time()},0);
+var date=new Date();
+var time=date.toLocaleTimeString();
+document.getElementById("time").innerHTML=time;
