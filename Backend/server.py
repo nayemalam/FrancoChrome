@@ -32,8 +32,9 @@ def image():
     
     print(date_arg)
 
+    
     cookie_data = request.cookies.get("name")
-    print(cookie_data)
+    print("Cookie_data: ", cookie_data)
 
     img_path = "./quebec_small.jpg"
     audio_path = "./output.mp3"
