@@ -1,3 +1,8 @@
+# :zap: FrancoChrome
+###### Quick access to: varios tourist zones, beautiful sceneries and finally our bilangual stats!
+
+The following project was initiated during ConUHacks! 
+
 * I'm developing a project called: (54 Characters)
 * Here’s the elevator pitch: (A short tagline for the project 117 characters)
 * Here's the whole story: (Story for the project, motivations and functionalities)
