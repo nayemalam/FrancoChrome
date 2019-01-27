@@ -22,7 +22,9 @@ def image():
         images[uuid_val] = get_image()
     print("uuid_val: ", uuid_val)
     prev_words = users.get(uuid_val, [])
-    
+
+    if uuid_val not in images:
+        images[uuid_val] = get_image()
     word = get_word()[0]
 
     while word in prev_words:
