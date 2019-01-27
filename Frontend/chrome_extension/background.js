@@ -30,13 +30,21 @@ debugger;
 imageRequest.open("GET", "http://35.203.43.62:8080/image?date="+ today, false);
 imageRequest.send();
 document.getElementById('bg').src = "http://35.203.43.62:8080" + imageRequest.responseText;
-document.getElementById('photo_desc').innerHTML = imageRequest.getResponseHeader("Description");
-console.log(imageDescription);
+document.getElementById('photo_desc').innerHTML = imageRequest.getResponseHeader("img_description");
+document.getElementById('word').innerHTML  = imageRequest.getResponseHeader("word");
+document.getElementById('meaning').innerHTML = imageRequest.getResponseHeader("translation");
+//var newWord = wordRequest.responseText;
 
+/*
 var wordRequest = new XMLHttpRequest();
 wordRequest.open("GET", "http://35.203.43.62:8080/word?date=" + today, true);
 wordRequest.send();
 document.getElementById('word').innerHTML  = wordRequest.responseText;
-document.getElementById('translation').innerHTML = wordRequest.getResponseHeader("Translation");
+document.getElementById('meaning').innerHTML = wordRequest.getResponseHeader("Translation");
 //var newWord = wordRequest.responseText;
 console.log(newWord);
+*/
+
+
+
+
