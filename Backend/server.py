@@ -1,6 +1,6 @@
 from datetime import date, datetime
 from flask import Flask, request, url_for, send_file, make_response
-from word import get_word, translation, to_speech
+from utils import get_word, get_image, translation, to_speech
 import uuid
 from flask_cors import CORS
 from database import create_connection, create_table
