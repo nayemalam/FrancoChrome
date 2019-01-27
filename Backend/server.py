@@ -18,6 +18,7 @@ def image():
     if uuid_val is None:
         uuid_val = str(uuid.uuid4())
         uuid_val = uuid_val.replace("-", "")
+        images[uuid_val] = get_image()
     print("uuid_val: ", uuid_val)
     prev_words = users.get(uuid_val, [])
     
