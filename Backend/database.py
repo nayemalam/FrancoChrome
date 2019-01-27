@@ -29,3 +29,35 @@ def create_table(conn, create_table_sql):
         print(e)
         print("Could not create database")
 
+
+
+if __name__ == '__main__':
+    conn = create_connection("./database/database.db")
+    create_table(conn,
+    '''
+    CREATE TABLE words (
+    wid int(11) NOT NULL UNIQUE,
+    word varchar(500) NOT NULL,
+    translation varchar(500),
+    PRIMARY KEY (wid)
+    );
+    ''')
+    create_table(conn,
+    '''
+    CREATE TABLE users (
+    uid int(11) NOT NULL UNIQUE DEFAULT 1,
+    username varchar(500) NOT NULL,
+    PRIMARY KEY (uid)
+    );    
+    ''')
+    create_table(conn,
+    '''
+    CREATE TABLE seen (
+    uid int(11),
+    wid int(11),
+    FOREIGN KEY (uid) REFERENCES users(uid),
+    FOREIGN KEY (wid) REFERENCES words(wid),
+    PRIMARY KEY (uid, wid)
+    );
+    ''')
+    conn.close()
