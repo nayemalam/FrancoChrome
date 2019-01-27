@@ -26,12 +26,10 @@ def image():
     while word in prev_words:
         word = get_word()[0]
     
-    print(word)
-
     prev_words.append(word)
 
-    if len(prev_words) % 10 == 0:
-        images[uuid_val] = get_image()
+    # if len(prev_words) % 10 == 0:
+    #     images[uuid_val] = get_image()
 
     users[uuid_val] = prev_words
     
