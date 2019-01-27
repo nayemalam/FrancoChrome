@@ -1,12 +1,14 @@
 from datetime import date, datetime
 from flask import Flask, request, url_for, send_file, make_response
 from word.word import get_word, translation, to_speech
-import io
+import uuid
 from flask_cors import CORS
 from database import create_connection, create_table
 
 app = Flask(__name__)
 CORS(app, resources={"/*": {"origins": "*"}})
+
+conn = create_connection("./database/database.db")
 
  
 @app.route("/")
@@ -16,9 +18,18 @@ def index():
 
 @app.route("/register/")
 def register():
-    res = make_response()
-    res.set_cookie("name", value="I am cookie")
+    uuid = request.cookies.get("uuid")
+    if uuid is None:
+        res = make_response()
+        uuid_val = uuid.uuid4()
+        res.set_cookie("uuid", value=uuid_val)
     
+    val = conn.execute('''
+        SELECT * FROM users;
+    ''')
+
+    print(val)
+
     return res
 
 
@@ -33,7 +44,7 @@ def image():
     print(date_arg)
 
     
-    cookie_data = request.cookies.get("name")
+    cookie_data = request.cookies.get("uuid")
     print("Cookie_data: ", cookie_data)
 
     img_path = "./quebec_small.jpg"
