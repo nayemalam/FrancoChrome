@@ -32,6 +32,9 @@ def image():
     
     print(date_arg)
 
+    cookie_data = request.cookies.get("name")
+    print(cookie_data)
+
     img_path = "./quebec_small.jpg"
     audio_path = "./output.mp3"
     img_desc = "This image depicts the majestic Quebec City skyline"
