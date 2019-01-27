@@ -28,11 +28,12 @@ function getAllElements(date){
   document.getElementById('photo_desc').innerHTML = objectRequest.getResponseHeader("img_description");
   document.getElementById('word').innerHTML  = objectRequest.getResponseHeader("word");
   document.getElementById('meaning').innerHTML = objectRequest.getResponseHeader("translation");
-  var audioFile = objectRequest.getResponseHeader("audio_file");
+  var audioFile = "http://35.203.43.62:8080" + objectRequest.getResponseHeader("audio_file");
   playAudio(audioFile);
 }
 
+
 function playAudio(audioFile) {
-  document.getElementById('audio-part').src = audioFile;
-  document.getElementById('audio-part').play();
+  document.getElementById('sound').src = audioFile;
+  (sound).play();
 }

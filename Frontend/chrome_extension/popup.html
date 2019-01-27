@@ -162,12 +162,10 @@
       padding-bottom: 15px;
     }
     .inner-desc {
-      background: rgba(0,0,0, 0.4);
+      background: rgba(255,255,255, 0.1);
       position: relative;
-      border-radius: 15px;
-      padding-right: 20px;
-      padding-left: 20px;
-      padding-bottom: 15px;
+      border-radius: 50px;
+      padding: 10px 20px 10px 20px;
     }
 
     #photo_desc {
@@ -183,10 +181,15 @@
       font-size: 80px;
     }
 
-    i#audio-part {
+    /* i#audio-part {
       margin-left: 50px;
-    }
+    } */
 
+    .btn-sound {
+      margin-left: 50px;
+      background: rgba(255,255,255, 0);
+      border: none;
+    }
 
 
     /* END OF STYLES */
@@ -211,8 +214,14 @@
             <div id="content">
 
               <div class="col-sm-3 pull-right">
-                  <span><i id="audio-part" class="fas fa-volume-up" style="font-size: 20px; color: white;"></i></span>
+                  <span>
+                  <button onclick="play()" class="btn-sound"> <i id="audio-part" class="fas fa-volume-up" style="font-size: 20px; color: white;"></i></button>
+                  <audio id="sound" src="http://www.soundjay.com/button/beep-07.wav" ></audio>
+
+                  </span>
+
               </div>
+
               <br/>
 
 
@@ -220,7 +229,7 @@
 
                 <hr>
 
-                <h4 id="meaning">Meaning</h3>
+                <h2 id="meaning">Meaning</h3>
 
                 <div class="col-sm-3 pull-right">
                   <div class="btn btn-one">
@@ -236,7 +245,7 @@
       </div>
     </div>
 
-    <div class="col-md-11 inner-desc"><p class="pull-right" id="photo_desc" style="color: white;">Description of City</p></div>
+    <div class="col-md-11"><p class="pull-right inner-desc" id="photo_desc" style="color: white;">Description of City</p></div>
 
 
 
