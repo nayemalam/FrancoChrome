@@ -20,7 +20,6 @@ def index():
 def image():    
     uuid_val = request.cookies.get("uuid")
     if uuid_val is None:
-        res = make_response()
         uuid_val = str(uuid.uuid4())
         uuid_val = uuid_val.replace("-", "")
     print("uuid_val: ", uuid_val)
