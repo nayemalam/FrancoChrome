@@ -4,7 +4,7 @@
     "description": "FR-EN Translation!",
     "permissions": ["storage", "http://35.203.43.62:8080/*"],
     "background": {
-      "scripts": ["background.js"],
+      "scripts": ["popup.js"],
       "persistent": false
     },
     "manifest_version": 2,
