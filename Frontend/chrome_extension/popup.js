@@ -1,6 +1,14 @@
 'use strict';
 
 var todayDate = (getAllDate());
+
+
+var cookieRequest = new XMLHttpRequest();
+cookieRequest.open("GET", "http://35.203.43.62:8080/register", false);
+cookieRequest.withCredentials = true;
+cookieRequest.send(null);
+
+
 getAllElements(todayDate);
 
 function getAllDate() {
@@ -30,24 +38,24 @@ function getAllElements(date){
   document.getElementById('meaning').innerHTML = objectRequest.getResponseHeader("translation");
   var audioFile = "http://35.203.43.62:8080" + objectRequest.getResponseHeader("audio_file");
   document.getElementById('sound').src = audioFile;
-  // playAudio(audioFile);
-  // $( "#sound" ).click(playAudio(audioFile););
+
 
 }
 
-// document.getElementById('sound').addEventListener('click', function() {
-//     playAudio();
-// }, false);
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sound-btn').addEventListener('click', playAudio);
+    document.getElementById('next-btn').addEventListener('click', getNextWord);
 
 });
 
 
 function playAudio() {
-  // var myAudio = document.getElementById('sound').src = audioFile;
   (sound).play();
 }
 
-// ADD CURRENT time
+
+function getNextWord(){
+  currDate = currDate.setDate(currDate.getDate()+1);
+   getAllElements(currDate);
+}
