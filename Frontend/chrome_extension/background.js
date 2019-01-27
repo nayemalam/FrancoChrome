@@ -44,7 +44,3 @@ document.getElementById('meaning').innerHTML = wordRequest.getResponseHeader("Tr
 //var newWord = wordRequest.responseText;
 console.log(newWord);
 */
-
-
-
-
