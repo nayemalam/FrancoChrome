@@ -6,7 +6,7 @@ from flask_cors import CORS
 from database import create_connection, create_table
 
 app = Flask(__name__)
-CORS(app, resources={"/*": {"origins": "*"}}, expose_headers='*')
+CORS(app, resources={"/*": {"origins": "*"}}, supports_credentials=True, expose_headers='*')
 
 users = dict()
 images = dict()
