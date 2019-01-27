@@ -1,8 +1,8 @@
 from google.cloud import translate, texttospeech
-import sys
 import csv
 import random
 import re
+import os
 
 # Instantiates clients
 translate_client = translate.Client()
@@ -12,10 +12,11 @@ speech_client = texttospeech.TextToSpeechClient()
 voice_ = texttospeech.types.VoiceSelectionParams(language_code='fr-CA', ssml_gender=texttospeech.enums.SsmlVoiceGender.NEUTRAL)
 audio_config_ = texttospeech.types.AudioConfig(audio_encoding=texttospeech.enums.AudioEncoding.MP3)
 
+static_path = os.getcwd() + '/static/'
+# getting word list
 word_dict = {}
-with open('./word/french-word-list-total.csv', 'r') as word_list:
+with open(static_path + 'word/french-word-list-total.csv', 'r') as word_list:
     csv_reader = csv.reader(word_list, delimiter=',')
-    n = 0
     for row in csv_reader:
         col_list = row[0].split(';')
         try:
@@ -27,14 +28,20 @@ with open('./word/french-word-list-total.csv', 'r') as word_list:
             freq = col_list[2]
             word_dict[word_n] = [word, freq]
 
-for i in list(word_dict):
-    word = word_dict.get(i)[0]
-    if(re.search('\W', word)):
-        word_dict.pop(i)
+    for i in list(word_dict):
+        word = word_dict.get(i)[0]
+        if(re.search('\W', word)):
+            word_dict.pop(i)
+
+# getting image list
+image_list = os.listdir(os.getcwd() + '/static/images/')
 
 def get_word():
-    word_num = random.choice(list(word_dict.keys()))
-    return word_dict.get(word_num)
+    key = random.choice(list(word_dict))
+    return word_dict.get(key)
+
+def get_image():
+    return random.choice(image_list)
 
 def translation(word,  tgt_lang='en', src_lang='fr'):
     return translate_client.translate(word, target_language=tgt_lang, source_language=src_lang)
