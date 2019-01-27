@@ -9,11 +9,7 @@ app = Flask(__name__)
 CORS(app, resources={"/*": {"origins": "*"}}, expose_headers='*')
 
 users = dict()
-
- 
-@app.route("/")
-def index():
-    return "Index!"
+images = dict()
 
 
 @app.route("/image/")
@@ -34,13 +30,18 @@ def image():
 
     prev_words.append(word)
 
+    if len(prev_words) % 10 == 0:
+        images[uuid_val] = get_image()
+
     users[uuid_val] = prev_words
     
     to_speech(word=word, save_to="static/audio/", filename=word)
 
     img_path = "./quebec_small.jpg"
     audio_path = "./audio/" + word + ".mp3"
-    img_desc = "This image depicts the majestic Quebec City skyline"
+    img_desc = "This image depicts the majestic Quebec \
+                City skyline this is a long version of a \
+                description hopefully this works"
     
     response = make_response(url_for('static', filename=img_path))
 
