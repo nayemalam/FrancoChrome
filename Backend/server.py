@@ -7,7 +7,7 @@ import json
 from database import create_connection, create_table
 
 app = Flask(__name__)
-CORS(app, resources={"/*": {"origins": "*"}}, expose_headers='*', origins='*', supports_credentials=True)
+CORS(app, resources={"/*": {"origins": "*"}}, expose_headers='*')
 
 users = dict()
 images = dict()
@@ -62,7 +62,7 @@ def image():
 
     r = json.dumps(response_dict)
     response = make_response(r)
-    response.set_cookie("uuid", value=uuid_val)
+    response.set_cookie("cookie", value=uuid_val)
 
     return response
 
