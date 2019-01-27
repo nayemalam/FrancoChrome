@@ -29,13 +29,25 @@ function getAllElements(date){
   document.getElementById('word').innerHTML  = objectRequest.getResponseHeader("word");
   document.getElementById('meaning').innerHTML = objectRequest.getResponseHeader("translation");
   var audioFile = "http://35.203.43.62:8080" + objectRequest.getResponseHeader("audio_file");
+  document.getElementById('sound').src = audioFile;
   // playAudio(audioFile);
   // $( "#sound" ).click(playAudio(audioFile););
 
 }
 
+// document.getElementById('sound').addEventListener('click', function() {
+//     playAudio();
+// }, false);
 
-function playAudio(audioFile) {
-  document.getElementById('sound').src = audioFile;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('sound-btn').addEventListener('click', playAudio);
+
+});
+
+
+function playAudio() {
+  // var myAudio = document.getElementById('sound').src = audioFile;
   (sound).play();
 }
+
+// ADD CURRENT time
