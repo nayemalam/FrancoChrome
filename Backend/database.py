@@ -30,7 +30,6 @@ def create_table(conn, create_table_sql):
         print(e)
         print("Could not create database")
 
-
 if __name__ == '__main__':
     conn = create_connection(os.getcwd() + "/database/database.db")
     create_table(conn,
