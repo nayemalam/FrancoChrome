@@ -1,5 +1,4 @@
 from google.cloud import translate, texttospeech
-from playsound import playsound
 import sys
 import csv
 import random
@@ -31,11 +30,11 @@ def get_word():
     word_num = random.choice(list(word_dict.keys()))
     return word_dict.get(word_num)
 
-def translation(text,  tgt_lang='en', src_lang='fr'):
-    return translate_client.translate(text, target_language=tgt_lang, source_language=src_lang)
+def translation(word,  tgt_lang='en', src_lang='fr'):
+    return translate_client.translate(word, target_language=tgt_lang, source_language=src_lang)
 
-def to_speech(word_='', save_to='', filename='output'):
-    input_ = texttospeech.types.SynthesisInput(text=word_)
+def to_speech(word, save_to='', filename='output'):
+    input_ = texttospeech.types.SynthesisInput(text=word)
     response = speech_client.synthesize_speech(input_, voice_, audio_config_)
 
     output = filename + '.mp3'
@@ -43,7 +42,6 @@ def to_speech(word_='', save_to='', filename='output'):
         # Write the response to the output file.
         out.write(response.audio_content)
         print('Audio content written to file %s' % output)
-    playsound(output)
 
 # for _, v in word_dict.items():
 #     word = v[0]
