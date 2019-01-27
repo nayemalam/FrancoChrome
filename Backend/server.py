@@ -30,6 +30,8 @@ def image():
     while word in prev_words:
         word = get_word()[0]
     
+    print(word)
+
     prev_words.append(word)
 
     users[uuid_val] = prev_words
@@ -44,7 +46,7 @@ def image():
 
     response.headers["img_description"] = img_desc
     response.headers["word"] = word
-    response.headers["translation"] = translation(word)
+    response.headers["translation"] = translation(word)["translatedText"]
     response.headers["audio_file"] = url_for('static', filename=audio_path)
     response.set_cookie("uuid", value=uuid_val)
 
