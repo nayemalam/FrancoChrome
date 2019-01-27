@@ -4,6 +4,12 @@ img.criteria {
   margin: 1.66%;
 }
 
+p.criteria {
+  width: 30%;
+  float: left;
+  margin: 1.66%;
+  text-align: center;
+}
 img.criteria:hover {
   opacity: 0.5;
 }
