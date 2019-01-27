@@ -1,6 +1,6 @@
 'use strict';
 
-var todayDate = (getAllDate());
+var currDate = (getAllDate());
 
 
 var cookieRequest = new XMLHttpRequest();
@@ -9,7 +9,7 @@ cookieRequest.withCredentials = true;
 cookieRequest.send(null);
 
 
-getAllElements(todayDate);
+getAllElements(currDate);
 
 function getAllDate() {
   var today = new Date();
@@ -55,7 +55,13 @@ function playAudio() {
 }
 
 // ADD CURRENT time
-var display=setInterval(function(){Time()},0);
-var date=new Date();
-var time=date.toLocaleTimeString();
-document.getElementById("time").innerHTML=time;
+// var display=setInterval(function(){Time()},0);
+// var date=new Date();
+// var time=date.toLocaleTimeString();
+// document.getElementById("time").innerHTML=time;
+
+function getNextWord(){
+  debugger;
+  // currDate = currDate.setDate(currDate.getDate()+1);
+  //  getAllElements(currDate);
+}
