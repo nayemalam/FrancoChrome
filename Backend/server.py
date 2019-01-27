@@ -36,10 +36,10 @@ def image():
 
     users[uuid_val] = prev_words
     
-    to_speech(word=word, save_to="./audio/", filename=word)
+    to_speech(word=word, save_to="./static/audio/", filename=word)
 
     img_path = "./quebec_small.jpg"
-    audio_path = "./audio/" + word + ".mp3"
+    audio_path = "./static/audio/" + word + ".mp3"
     img_desc = "This image depicts the majestic Quebec City skyline"
     
     response = make_response(url_for('static', filename=img_path))
