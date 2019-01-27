@@ -42,7 +42,6 @@ for img in image_list:
     with open(os.getcwd() + '/static/captions/' + image_captions[capFileIn], 'r') as f:
         image_dict[img] = f.read()
 
-import pdb; pdb.set_trace()
 def get_word():
     key = random.choice(list(word_dict))
     return word_dict.get(key)

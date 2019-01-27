@@ -19,12 +19,15 @@ def image():
     if uuid_val is None:
         uuid_val = str(uuid.uuid4())
         uuid_val = uuid_val.replace("-", "")
-        images[uuid_val] = get_image()
+        img_list = get_image()
+        images[uuid_val] = img_list[0]
     print("uuid_val: ", uuid_val)
     prev_words = users.get(uuid_val, [])
 
     if uuid_val not in images:
-        images[uuid_val] = get_image()
+        img_list = get_image()
+        images[uuid_val] = img_list[0]
+
     word = get_word()[0]
 
     while word in prev_words:
@@ -34,15 +37,14 @@ def image():
 
     if len(prev_words) % 10 == 0:
         prev_img = images[uuid_val]
-        img = get_image()
-        while prev_img != img:
-            img = get_image()
-        images[uuid_val] = img
+        img_list = get_image()
+        img = img_list[0]
+        while prev_img != img_list[0]:
+            img_list = get_image()
+        images[uuid_val] = img_list[0]
     users[uuid_val] = prev_words
     
     to_speech(word=word, save_to="static/audio/", filename=word)
-
-    response_dict = dict()
 
     img_path = "images/" + images[uuid_val]
     audio_path = "./audio/" + word + ".mp3"
