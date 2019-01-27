@@ -68,7 +68,7 @@
 
     #content {
       text-align: center;
-      padding-top: 15%;
+      padding-top: 10%;
 
     }
 
@@ -160,6 +160,7 @@
       padding-right: 20px;
       padding-left: 20px;
       padding-bottom: 15px;
+
     }
     .inner-desc {
       background: rgba(255,255,255, 0.1);
@@ -170,6 +171,7 @@
 
     #photo_desc {
       margin-top: 30px;
+      margin-right: -60px;
     }
 
 
@@ -191,6 +193,9 @@
       border: none;
     }
 
+    .col-md-11{
+      margin-top: 60px;
+    }
 
     /* END OF STYLES */
 
@@ -203,8 +208,7 @@
   </head>
   <body>
 
-    <img src="http://35.203.43.62:8080/static/quebec_small.jpg" id="bg" alt="">
-
+    <img src="http://35.203.8.27:8080/static/quebec_small.jpg" id="bg" alt="">
 
     <div class="container">
       <div class="inner">
@@ -244,9 +248,10 @@
       </div>
     </div>
 
-    <div id="time" style="color: white;"></div>
     <div class="col-md-11">
-      <p class="pull-right inner-desc" id="photo_desc" style="color: white; display: inline-block;">Description of City</p>
+      <h3 id="weather"></h3>
+      <p class="pull-right inner-desc" id="photo_desc" style="color: white;">Description of City</p>
+      <div id="currTime" style="color: white; font-size: 80px; padding-left: 25px;"></div>
     </div>
 
 
