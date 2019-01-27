@@ -1,5 +1,7 @@
 # :zap: FrancoChrome
 ###### Quick access to: varios tourist zones, beautiful sceneries and finally our bilangual stats!
+#
+https://devpost.com/software/conuhacks-hp7u2m#updates
 
 The following project was initiated during ConUHacks! 
 
