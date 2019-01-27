@@ -35,13 +35,21 @@ with open(static_path + 'word/french-word-list-total.csv', 'r') as word_list:
 
 # getting image list
 image_list = os.listdir(os.getcwd() + '/static/images/')
+image_captions = os.listdir(os.getcwd() + '/static/captions/')
+image_dict = {}
+for img in image_list:
+    capFileIn = image_captions.index( img.split('.')[0] + '.txt' )
+    with open(os.getcwd() + '/static/captions/' + image_captions[capFileIn], 'r') as f:
+        image_dict[img] = f.read()
 
+import pdb; pdb.set_trace()
 def get_word():
     key = random.choice(list(word_dict))
     return word_dict.get(key)
 
 def get_image():
-    return random.choice(image_list)
+    key = random.choice(list(image_dict))
+    return [key, image_dict.get(key)]
 
 def translation(word,  tgt_lang='en', src_lang='fr'):
     return translate_client.translate(word, target_language=tgt_lang, source_language=src_lang)
