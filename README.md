@@ -1,3 +1,7 @@
+* I'm developing a project called: (54 Characters)
+* Here’s the elevator pitch: (A short tagline for the project 117 characters)
+* Here's the whole story: (Story for the project, motivations and functionalities)
+
 #### Ideas
 - Online Jukebox (Jukeboxify)
   - MusicMatch
