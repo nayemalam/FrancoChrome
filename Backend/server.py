@@ -50,19 +50,13 @@ def image():
                 City skyline this is a long version of a \
                 description hopefully this works"
     
-    img_path = url_for('static', filename=img_path)
-    audio_path = url_for('static', filename=audio_path)
-    translation_val = translation(word)["translatedText"]
-    
+    response = make_response(url_for('static', filename=img_path))
 
-    response_dict["img_description"] = img_desc
-    response_dict["word"] = word
-    response_dict["translation"] = translation_val
-    response_dict["audio_file"] = audio_path
-
-    r = json.dumps(response_dict)
-    response = make_response(r)
-    response.set_cookie("cookie", value=uuid_val)
+    response.headers["img_description"] = img_desc
+    response.headers["word"] = word
+    response.headers["translation"] = translation(word)["translatedText"]
+    response.headers["audio_file"] = url_for('static', filename=audio_path)
+    response.set_cookie("uuid", value=uuid_val)
 
     return response
 
