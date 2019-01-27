@@ -2,6 +2,7 @@ from google.cloud import translate, texttospeech
 import sys
 import csv
 import random
+import re
 
 # Instantiates clients
 translate_client = translate.Client()
@@ -26,6 +27,11 @@ with open('./word/french-word-list-total.csv', 'r') as word_list:
             freq = col_list[2]
             word_dict[word_n] = [word, freq]
 
+for i in list(word_dict):
+    word = word_dict.get(i)[0]
+    if(re.search('\W', word)):
+        word_dict.pop(i)
+
 def get_word():
     word_num = random.choice(list(word_dict.keys()))
     return word_dict.get(word_num)
@@ -42,16 +48,3 @@ def to_speech(word, save_to='', filename='output'):
         # Write the response to the output file.
         out.write(response.audio_content)
         print('Audio content written to file %s' % output)
-
-# for _, v in word_dict.items():
-#     word = v[0]
-#     translation = translation(word).get('translatedText')
-#     print('word: %s \t meaning: %s' % (word, translation))
-#     to_speech(word)
-#     playsound('output.mp3')
-
-if len(sys.argv) > 1:
-    word = sys.argv[1]
-    translation = translation(word).get('translatedText')
-    print('word: %s \t meaning: %s' % (word, translation))
-    to_speech(word)
