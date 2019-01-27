@@ -48,9 +48,7 @@ def image():
 
     img_path = "images/" + images[uuid_val]
     audio_path = "./audio/" + word + ".mp3"
-    img_desc = "This image depicts the majestic Quebec \
-                City skyline this is a long version of a \
-                description hopefully this works"
+    img_desc = img_list[1]
     
     response = make_response(url_for('static', filename=img_path))
 
