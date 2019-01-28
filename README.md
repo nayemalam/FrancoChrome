@@ -15,3 +15,9 @@ The entire project is hosted as a Chrome extension and will eventually be availa
 - Google Cloud Text to Speech
 - Google Cloud Translation 
 - HTML/JS
+
+### Previews:
+![Preview1](https://res.cloudinary.com/nayemalam/image/upload/v1548642991/preview1.png)
+#
+![Preview2](https://res.cloudinary.com/nayemalam/image/upload/v1548643002/preview2.png)
+
