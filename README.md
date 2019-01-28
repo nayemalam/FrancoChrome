@@ -11,9 +11,9 @@ This means that as time progresses, the user continually builds their vocabulary
 The entire project is hosted as a Chrome extension and will eventually be available on Chrome Web Store.
 
 ## Technologies Used
-- Flask
-- Google Cloud Text to Speech
-- Google Cloud Translation 
+- Flask (Python)
+- Google Cloud Text to Speech (Python API)
+- Google Cloud Translation (Python API)
 - HTML/JS
 
 ### Previews:
