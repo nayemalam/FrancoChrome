@@ -19,5 +19,5 @@ The entire project is hosted as a Chrome extension and will eventually be availa
 ### Previews:
 ![Preview1](https://res.cloudinary.com/nayemalam/image/upload/v1548642991/preview1.png)
 #
-![Preview2](https://res.cloudinary.com/nayemalam/image/upload/v1548643002/preview2.png)
+![Preview2](https://res.cloudinary.com/nayemalam/image/upload/v1548643454/preview2.png)
 
