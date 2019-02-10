@@ -1,61 +1,23 @@
-# :zap: FrancoChrome
-###### Quick access to: varios tourist zones, beautiful sceneries and finally our bilangual stats!
+# :zap: FrancoChrome - 3rd Place Canadian Heritage Winner ConUHacks 2019
+## A chrome extension that allows anglophones to passively build their French vocabulary over time
+https://devpost.com/software/conuhacks-hp7u2m#updates
 
-The following project was initiated during ConUHacks! 
+Moving to a new region or country can be tough for anyone, however, moving to a region where you don't speak the language can be even more challenging.
 
-* I'm developing a project called: (54 Characters)
-* Here’s the elevator pitch: (A short tagline for the project 117 characters)
-* Here's the whole story: (Story for the project, motivations and functionalities)
+FrancoChrome is designed to make this transition easier for anglophones in French majority regions. Everyday, as users open a new tab in the Chrome browser, they are presented with a new word in French along with it's English translation. In this manner, over the course of a year a user will be introduced to 10 000+ french words along with their pronunciation by a native French speaker.
 
-#### Ideas
-- Online Jukebox (Jukeboxify)
-  - MusicMatch
-  - Spotify Recommendation
-  - Napster API
-  Features (brainstorming):
-    - Location based music recommendation
-    - Music selection on screen
-    - Play song you select
-    - You see song lyrics once you start playing
-    - Dashboard
-      - Top albums, by month, by day
-      - Search by location
-    - Independent artists paid per stream 
-    - Discover new local independent artists that aren't as well known
-    - Give donations to artist 
-    - Music by occasion 
-    
-    
-- Highlight text and keep it
-  Features
-  - Highlight a web page and see your highlights when you return to the webpage
-  - Search by highlight
-  - Export highlight to PDF
-  - Skip to your highlights
-  - Categorize your highlights
-    - Attach a tag
-  - Different highlighter colors
-  - Highlight expiration
-  - Highlight a picture
-  - Share your highlights
-  - Highlighter is open source
+This means that as time progresses, the user continually builds their vocabulary passively and is able to better communicate with individuals in their neighborhoods.
 
-- How to do your taxes
-  - Online
+The entire project is hosted as a Chrome extension and will eventually be available on Chrome Web Store.
 
-- Curated news stories
+## Technologies Used
+- Flask (Python)
+- Google Cloud Text to Speech (Python API)
+- Google Cloud Translation (Python API)
+- HTML/JS
 
-- Chrome extension to change words
-
-- Like or dislike websites
-  - Give warnings if websites are bad
-  - People can report website for issues
-  - Crowdsource
-
+### Previews:
+![Preview1](https://res.cloudinary.com/nayemalam/image/upload/v1548642991/preview1.png)
 #
-Testing push access
-
-
-
-
+![Preview2](https://res.cloudinary.com/nayemalam/image/upload/v1548643454/preview2.png)
 
