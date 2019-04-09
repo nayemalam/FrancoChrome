@@ -16,6 +16,12 @@ The entire project is hosted as a Chrome extension and will eventually be availa
 - Google Cloud Translation (Python API)
 - HTML/JS
 
+## Team Members 
+   - Nayem Alam 
+   - Afreen Aliya (https://github.com/afreenaliya)
+   - Saleh Bakhit (https://github.com/sbakhit)
+   - Ali Shobeiri (https://github.com/alishobeiri)
+    
 ### Previews:
 ![Preview1](https://res.cloudinary.com/nayemalam/image/upload/v1548642991/preview1.png)
 #
